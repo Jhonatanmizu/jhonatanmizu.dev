@@ -1,5 +1,14 @@
 ---
-
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Engineering from '../components/Engineering.astro';
+import Design from '../components/Design.astro';
+import About from '../components/About.astro';
+import Posts from '../components/Posts.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -9,9 +18,18 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Jhonatan Mizu - FullStack Software Engineer</title>
+		<meta name="description" content="Full-stack developer and UI/UX specialist with 4+ years of experience." />
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-gradient-to-br from-base to-base_alt text-fontColor">
+		<Header />
+		<Hero />
+		<Engineering />
+		<Design />
+		<!-- <About />
+		<Posts />
+		<Projects />
+		<Contact /> -->
+		<Footer />
 	</body>
 </html>
