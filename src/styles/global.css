@@ -12,3 +12,56 @@ html {
   background-color: #1a1f3a;
   color: #ffffff;
 }
+
+#hamburger-icon {
+	width: 30px;
+	height: 22px;
+	position: relative;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	cursor: pointer;
+}
+
+#hamburger-icon span {
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 100%;
+	background: #ffffff;
+	border-radius: 9px;
+	opacity: 1;
+	left: 0;
+	transform: rotate(0deg);
+	transition: .25s ease-in-out;
+}
+
+#hamburger-icon span:nth-child(1) {
+	top: 0px;
+}
+
+#hamburger-icon span:nth-child(2) {
+	top: 9px;
+}
+
+#hamburger-icon span:nth-child(3) {
+	top: 18px;
+}
+
+#hamburger-icon.is-active span:nth-child(1) {
+	top: 9px;
+	transform: rotate(135deg);
+}
+
+#hamburger-icon.is-active span:nth-child(2) {
+	opacity: 0;
+	left: -60px;
+}
+
+#hamburger-icon.is-active span:nth-child(3) {
+	top: 9px;
+	transform: rotate(-135deg);
+}
+
+#menu.show-menu {
+	display: flex;
+}
