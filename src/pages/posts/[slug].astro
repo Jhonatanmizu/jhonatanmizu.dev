@@ -14,8 +14,74 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout>
-  <article class="prose prose-invert max-w-3xl mx-auto py-16 px-6 md:px-0">
-    <Content />
+<Layout title={`${post.data.title} | Jhonatan Mizu`} description={post.data.resume}>
+  <article class="w-full py-12 px-6 md:px-0">
+    <div class="max-w-3xl mx-auto">
+      <a 
+        href="/posts" 
+        class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors mb-12 group"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:-translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2,5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to all posts
+      </a>
+
+      <header class="mb-12">
+        <div class="flex flex-wrap gap-2 mb-6">
+          {post.data.tags.map((tag) => (
+            <span class="text-xs uppercase tracking-wider font-bold bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">
+              {tag}
+            </span>
+          ))}
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+          {post.data.title}
+        </h1>
+
+        <div class="flex items-center gap-4 text-fontColor/60 text-sm">
+          <time datetime={post.data.date.toISOString()}>
+            {post.data.date.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+          </time>
+          <span class="w-1 h-1 rounded-full bg-tertiary"></span>
+          <span>{post.data.resume.split(' ').length / 200 > 1 ? Math.ceil(post.data.resume.split(' ').length / 200) : 1} min read</span>
+        </div>
+      </header>
+
+      <div class="aspect-video mb-12 rounded-2xl overflow-hidden border border-tertiary/20">
+        <img 
+          src={post.data.cover} 
+          alt={post.data.title} 
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="prose prose-invert prose-primary max-w-none 
+        prose-headings:text-white prose-headings:font-bold
+        prose-p:text-fontColor/90 prose-p:leading-relaxed
+        prose-a:text-primary hover:prose-a:underline
+        prose-strong:text-white
+        prose-code:text-primary prose-code:bg-primary/5 prose-code:px-1 prose-code:rounded
+        prose-pre:bg-base_alt prose-pre:border prose-pre:border-tertiary/20
+        prose-img:rounded-xl prose-img:border prose-img:border-tertiary/20">
+        <Content />
+      </div>
+
+      <footer class="mt-20 pt-12 border-t border-tertiary/20">
+        <div class="bg-base_alt/30 rounded-2xl p-8 border border-tertiary/10">
+          <h3 class="text-white font-bold text-xl mb-4">Did you enjoy this article?</h3>
+          <p class="text-fontColor/80 mb-6">
+            I write about modern web development, software architecture, and design. Follow me for more insights.
+          </p>
+          <div class="flex gap-4">
+            <a href="https://github.com/jhonatanmizu" target="_blank" class="text-fontColor hover:text-primary transition-colors">GitHub</a>
+            <a href="#" class="text-fontColor hover:text-primary transition-colors">LinkedIn</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   </article>
 </Layout>
