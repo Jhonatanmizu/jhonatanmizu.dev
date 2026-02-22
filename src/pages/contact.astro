@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact | Jhonatan Mizu">
+  <section class="w-full py-20 px-6 md:px-12 min-h-[calc(100vh-200px)] flex items-center">
+    <div class="max-w-4xl mx-auto w-full">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+          Get in <span class="text-primary">Touch</span>
+        </h1>
+        <p class="text-fontColor/80 text-xl max-w-2xl mx-auto leading-relaxed">
+          I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Contact Information -->
+        <div class="space-y-6">
+          <div class="bg-base_alt/40 border border-tertiary/10 p-8 rounded-2xl">
+            <h3 class="text-white font-bold text-xl mb-6">Contact Details</h3>
+            <div class="space-y-4">
+              <a href="mailto:hello@jhonatanmizu.dev" class="flex items-center gap-4 text-fontColor/80 hover:text-primary transition-colors group">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider opacity-60">Email</p>
+                  <p class="text-lg">hello@jhonatanmizu.dev</p>
+                </div>
+              </a>
+
+              <div class="flex items-center gap-4 text-fontColor/80 group">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider opacity-60">Location</p>
+                  <p class="text-lg">Recife, Brazil (Remote)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-base_alt/40 border border-tertiary/10 p-8 rounded-2xl">
+            <h3 class="text-white font-bold text-xl mb-6">Social Profiles</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <a href="https://linkedin.com/in/jhonatanmizu" target="_blank" class="flex items-center gap-3 p-3 bg-base/50 rounded-xl border border-tertiary/10 hover:border-primary/50 hover:text-primary transition-all group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <span class="font-medium">LinkedIn</span>
+              </a>
+              <a href="https://github.com/jhonatanmizu" target="_blank" class="flex items-center gap-3 p-3 bg-base/50 rounded-xl border border-tertiary/10 hover:border-primary/50 hover:text-primary transition-all group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span class="font-medium">GitHub</span>
+              </a>
+              <a href="https://bsky.app/profile/jhonatanmizu.dev" target="_blank" class="flex items-center gap-3 p-3 bg-base/50 rounded-xl border border-tertiary/10 hover:border-primary/50 hover:text-primary transition-all group">
+                <!-- BlueSky Icon (Butterfly) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.32-2.29-3.37-4.53-5.5-4.8-2.99-.38-5.5 1.8-5.5 5.1 0 1.28.2 2.44.8 3.36 1.15 1.76 3.1 2.2 5.1 2.2a6.4 6.4 0 0 0 4.6-1.8c.3-.3.5-.6.5-.86.15-.3.15-.6 0-.86l-.5-.86c-1.5-1.5-3.37-2.1-5.1-1.8.3-.86.8-1.5 1.5-1.8 1.32-.4 3.37 1.8 5.1 5.1 1.73-3.3 3.78-5.5 5.1-5.1.7.3 1.2.94 1.5 1.8-1.73-.3-3.6.3-5.1 1.8l-.5.86c-.15.26-.15.56 0 .86.1.26.2.56.5.86 1.3 1.3 2.9 1.8 4.6 1.8 2 0 3.95-.44 5.1-2.2.6-.92.8-2.08.8-3.36 0-3.3-2.51-5.48-5.5-5.1-2.13.27-4.18 2.51-5.5 4.8Z"/></svg>
+                <span class="font-medium">BlueSky</span>
+              </a>
+              <a href="https://twitter.com/jhonatanmizu" target="_blank" class="flex items-center gap-3 p-3 bg-base/50 rounded-xl border border-tertiary/10 hover:border-primary/50 hover:text-primary transition-all group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                <span class="font-medium">Twitter</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-base_alt/40 border border-tertiary/10 p-8 rounded-2xl">
+          <h3 class="text-white font-bold text-xl mb-6">Send a Message</h3>
+          <form class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-fontColor/60 mb-2">Name</label>
+              <input type="text" id="name" name="name" class="w-full bg-base/50 border border-tertiary/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" placeholder="John Doe">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-fontColor/60 mb-2">Email</label>
+              <input type="email" id="email" name="email" class="w-full bg-base/50 border border-tertiary/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" placeholder="john@example.com">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-fontColor/60 mb-2">Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full bg-base/50 border border-tertiary/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors resize-none" placeholder="How can I help you?"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary hover:bg-accent text-base_alt font-bold py-4 rounded-xl transition-all hover:shadow-[0_0_20px_rgba(140,170,238,0.3)]">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
