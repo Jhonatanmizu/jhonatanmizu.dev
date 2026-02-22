@@ -17,7 +17,7 @@ const careers: CareerItem[] = [
     startDate: "Jan 2023",
     endDate: "Present",
     duration: "3 yrs 1 mos",
-    companyLink: "https://resend.com"
+    companyLink: "https://resend.com",
   },
   {
     title: "VP of Developer Experience",
@@ -26,7 +26,7 @@ const careers: CareerItem[] = [
     startDate: "Jul 2021",
     endDate: "Dec 2022",
     duration: "1 yr 5 mos",
-    companyLink: "https://workos.com"
+    companyLink: "https://workos.com",
   },
   {
     title: "Chief Product Officer",
@@ -35,7 +35,7 @@ const careers: CareerItem[] = [
     startDate: "Jun 2018",
     endDate: "Jul 2021",
     duration: "3 yrs 1 mos",
-    companyLink: "https://liferay.com"
+    companyLink: "https://liferay.com",
   },
   {
     title: "Principal Developer Advocate",
@@ -44,7 +44,7 @@ const careers: CareerItem[] = [
     startDate: "Mar 2015",
     endDate: "Jun 2018",
     duration: "3 yrs 3 mos",
-    companyLink: "https://liferay.com"
+    companyLink: "https://liferay.com",
   },
   {
     title: "Front-end Engineer",
@@ -53,8 +53,8 @@ const careers: CareerItem[] = [
     startDate: "Jul 2012",
     endDate: "Mar 2015",
     duration: "2 yrs 8 mos",
-    companyLink: "https://liferay.com"
-  }
+    companyLink: "https://liferay.com",
+  },
 ];
 ---
 
@@ -62,25 +62,34 @@ const careers: CareerItem[] = [
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl font-bold text-fontColor mb-12">Career</h2>
     <div class="space-y-8">
-      {careers.map((career) => (
-        <div class="border-l-2 border-primary pl-6 pb-8">
-          <h3 class="text-2xl font-bold text-fontColor mb-2">{career.title}</h3>
-          <div class="flex flex-col md:flex-row md:items-center gap-2 mb-3 text-fontColor">
-            {career.companyLink ? (
-              <a href={career.companyLink} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition underline">
-                {career.company}
-              </a>
-            ) : (
-              <span>{career.company}</span>
-            )}
-            <span class="hidden md:inline text-fontColor opacity-60">•</span>
-            <span class="text-fontColor opacity-60">{career.location}</span>
+      {
+        careers.map((career) => (
+          <div class="border-l-2 border-primary pl-6 pb-8">
+            <h3 class="text-2xl font-bold text-fontColor mb-2">
+              {career.title}
+            </h3>
+            <div class="flex flex-col md:flex-row md:items-center gap-2 mb-3 text-fontColor">
+              {career.companyLink ? (
+                <a
+                  href={career.companyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-primary transition underline"
+                >
+                  {career.company}
+                </a>
+              ) : (
+                <span>{career.company}</span>
+              )}
+              <span class="hidden md:inline text-fontColor opacity-60">•</span>
+              <span class="text-fontColor opacity-60">{career.location}</span>
+            </div>
+            <p class="text-fontColor opacity-60">
+              {career.startDate} — {career.endDate} • {career.duration}
+            </p>
           </div>
-          <p class="text-fontColor opacity-60">
-            {career.startDate} — {career.endDate} • {career.duration}
-          </p>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>

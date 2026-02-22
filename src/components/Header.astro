@@ -16,10 +16,10 @@ const currentPath = Astro.url.pathname;
 		</div>
 		<ul id="menu" class="hidden md:flex gap-8 text-fontColor flex-col md:flex-row md:items-center md:gap-8 absolute md:relative top-0 left-0 w-full h-screen md:h-auto bg-[#1a1f3a] md:bg-transparent justify-center md:justify-end items-center">
 			<li><a href="/" class={currentPath === '/' ? 'text-primary' : 'hover:text-primary transition'}>Home</a></li>
-			<li><a href="/about/" class={currentPath === '/about/' ? 'text-primary' : 'hover:text-primary transition'}>About</a></li>
-			<li><a href="#posts" class={currentPath === '/posts' ? 'text-primary' : 'hover:text-primary transition'}>Posts</a></li>
-			<li><a href="#projects" class={currentPath === '/projects' ? 'text-primary' : 'hover:text-primary transition'}>Projects</a></li>
-			<li><a href="#contact" class={currentPath === '/contact' ? 'text-primary' : 'hover:text-primary transition'}>Contact</a></li>
+			<li><a href="/about/" class={currentPath === '/about' ? 'text-primary' : 'hover:text-primary transition'}>About</a></li>
+			<li><a href="/posts" class={currentPath === '/posts' ? 'text-primary' : 'hover:text-primary transition'}>Posts</a></li>
+			<li><a href="/projects" class={currentPath === '/projects' ? 'text-primary' : 'hover:text-primary transition'}>Projects</a></li>
+			<li><a href="/contact" class={currentPath === '/contact' ? 'text-primary' : 'hover:text-primary transition'}>Contact</a></li>
 		</ul>
 	</nav>
 </header>
