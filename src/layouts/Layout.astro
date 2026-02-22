@@ -11,7 +11,7 @@ interface Props {
 const { title = 'Jhonatan Mizu - FullStack Developer', description = 'Full-stack developer and UI/UX specialist with 4+ years of experience.' } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -21,9 +21,17 @@ const { title = 'Jhonatan Mizu - FullStack Developer', description = 'Full-stack
 		<title>{title}</title>
 		<meta name="description" content={description} />
 	</head>
-	<body class="bg-gradient-to-br from-base to-base_alt text-fontColor">
+	<body class="bg-gradient-to-br from-base to-base_alt text-fontColor overflow-x-hidden">
 		<Header />
 		<slot />
 		<Footer />
+		<script>
+			import AOS from 'aos';
+			import 'aos/dist/aos.css';
+			AOS.init({
+				duration: 800,
+				once: false,
+			});
+		</script>
 	</body>
 </html>

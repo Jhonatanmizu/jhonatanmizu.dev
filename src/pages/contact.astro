@@ -22,7 +22,7 @@ const result = Astro.getActionResult(actions.sendEmail);
 
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Contact Information -->
-        <div class="space-y-6">
+        <div class="space-y-6" data-aos="fade-right">
           <div
             class="bg-base_alt/40 border border-tertiary/10 p-8 rounded-2xl h-full"
           >
@@ -156,6 +156,7 @@ const result = Astro.getActionResult(actions.sendEmail);
         <!-- Contact Form -->
         <div
           class="bg-base_alt/40 border border-tertiary/10 p-8 rounded-2xl relative overflow-hidden"
+          data-aos="fade-left"
         >
           <h3 class="text-white font-bold text-xl mb-6">Send a Message</h3>
 
