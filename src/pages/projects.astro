@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<Layout title="Projects | Jhonatan Mizu">
+  <section class="w-full py-20 px-6 md:px-12 min-h-screen">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-16 text-center max-w-2xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Featured <span class="text-primary">Projects</span>
+        </h1>
+        <p class="text-fontColor/80 text-lg leading-relaxed">
+          Explore a collection of my professional work and personal experiments in software development and UI/UX design.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <ProjectCard
+            title={project.data.title}
+            description={project.data.description}
+            tags={project.data.tags}
+            image={project.data.image}
+            link={project.data.link}
+            github={project.data.github}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
