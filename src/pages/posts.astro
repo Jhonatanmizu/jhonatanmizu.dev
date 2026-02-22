@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Post from "../components/Post.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+---
+
+<Layout>
+  <section id="posts" class="w-full py-16 px-6 md:px-12">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-white mb-12">Posts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <Post
+            cover={post.data.cover}
+            title={post.data.title}
+            resume={post.data.resume}
+            tags={post.data.tags}
+            date={post.data.date.toDateString()}
+            slug={post.slug}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
