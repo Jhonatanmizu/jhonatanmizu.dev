@@ -2,32 +2,53 @@
 
 ---
 
-<section id="about" class="w-full py-16 px-6 md:px-12 flex items-center">
+<section id="about" class="w-full py-24 px-6 md:px-12 bg-base/50">
   <div class="max-w-6xl mx-auto w-full">
-    <h2 class="text-4xl font-bold text-white mb-12">About me</h2>
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div class="bg-gray-700 rounded-lg h-80 flex items-center justify-center">
-        <img
-          src="https://avatars.githubusercontent.com/u/61719180?v=4"
-          alt="Profile"
-          class="w-full h-full object-cover rounded-lg"
-        />
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="relative group">
+        <div class="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-2xl blur-2xl group-hover:opacity-100 transition duration-500 opacity-70"></div>
+        <div class="relative aspect-square rounded-2xl overflow-hidden border border-tertiary/20 shadow-2xl">
+          <img
+            src="https://avatars.githubusercontent.com/u/61719180?v=4"
+            alt="Jhonatan Mizu Profile"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+          />
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-base_alt border border-tertiary/20 p-6 rounded-2xl shadow-xl hidden md:block">
+           <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl">4+</div>
+              <div>
+                 <p class="text-white font-bold text-sm">Years of</p>
+                 <p class="text-fontColor/60 text-xs">Experience</p>
+              </div>
+           </div>
+        </div>
       </div>
+      
       <div>
-        <p class="text-gray-200 mb-4">Hello, my name is Jhonatan Mizu 👋</p>
-        <p class="text-gray-300 leading-relaxed mb-6">
-          I'm a versatile FullStack Developer and UI/UX design enthusiast with 4
-          years of professional development and user experience design.
-          Passionate about creating dynamic solutions. I specialize in
-          cutting-edge technologies and contemporary design methodologies. I
-          leverage cutting-edge tools to voice user engagement by 30%.
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">
+          About <span class="text-primary">Me</span>
+        </h2>
+        <p class="text-fontColor text-lg mb-6 leading-relaxed">
+          Hello, I'm <span class="text-white font-bold">Jhonatan Mizu</span>. 👋
         </p>
-        <p class="text-gray-300 leading-relaxed">
-          My key achievements include the successful deployment of a
-          comprehensive employee recognition platform and the implementation of
-          intelligent scheduling features that significantly enhance user
-          engagement by 30%.
+        <p class="text-fontColor/80 leading-relaxed mb-6 text-lg">
+          I'm a versatile <span class="text-primary font-medium">FullStack Developer</span> and UI/UX design enthusiast with over 4 years of professional experience crafting digital experiences that bridge the gap between complex engineering and intuitive design.
         </p>
+        <p class="text-fontColor/80 leading-relaxed mb-8 text-lg">
+          My approach combines technical rigor with a deep understanding of user behavior. I specialize in building scalable, performant applications using modern stacks like <span class="text-white">React, Node.js, and Python</span>, always keeping the user at the center of every architectural decision.
+        </p>
+        
+        <div class="grid grid-cols-2 gap-6">
+           <div class="bg-base_alt/50 p-4 rounded-xl border border-tertiary/10">
+              <h4 class="text-primary font-bold mb-1">Architecture</h4>
+              <p class="text-fontColor/60 text-sm">Clean code & scalability</p>
+           </div>
+           <div class="bg-base_alt/50 p-4 rounded-xl border border-tertiary/10">
+              <h4 class="text-primary font-bold mb-1">UI/UX Design</h4>
+              <p class="text-fontColor/60 text-sm">User-centric interfaces</p>
+           </div>
+        </div>
       </div>
     </div>
   </div>
