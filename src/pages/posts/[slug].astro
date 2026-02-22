@@ -27,7 +27,7 @@ const { Content } = await post.render();
         Back to all posts
       </a>
 
-      <header class="mb-12">
+      <header class="mb-12" data-aos="fade-up">
         <div class="flex flex-wrap gap-2 mb-6">
           {post.data.tags.map((tag) => (
             <span class="text-xs uppercase tracking-wider font-bold bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">
@@ -53,7 +53,7 @@ const { Content } = await post.render();
         </div>
       </header>
 
-      <div class="aspect-video mb-12 rounded-2xl overflow-hidden border border-tertiary/20">
+      <div class="aspect-video mb-12 rounded-2xl overflow-hidden border border-tertiary/20" data-aos="fade-up" data-aos-delay="100">
         <img 
           src={post.data.cover} 
           alt={post.data.title} 
@@ -68,11 +68,13 @@ const { Content } = await post.render();
         prose-strong:text-white
         prose-code:text-primary prose-code:bg-primary/5 prose-code:px-1 prose-code:rounded
         prose-pre:bg-base_alt prose-pre:border prose-pre:border-tertiary/20
-        prose-img:rounded-xl prose-img:border prose-img:border-tertiary/20">
+        prose-img:rounded-xl prose-img:border prose-img:border-tertiary/20"
+        data-aos="fade-up"
+        data-aos-delay="200">
         <Content />
       </div>
 
-      <footer class="mt-20 pt-12 border-t border-tertiary/20">
+      <footer class="mt-20 pt-12 border-t border-tertiary/20" data-aos="fade-up">
         <div class="bg-base_alt/30 rounded-2xl p-8 border border-tertiary/10">
           <h3 class="text-white font-bold text-xl mb-4">Did you enjoy this article?</h3>
           <p class="text-fontColor/80 mb-6">

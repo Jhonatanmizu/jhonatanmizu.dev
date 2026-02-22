@@ -21,19 +21,21 @@ const posts = (await getCollection("posts")).sort(
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <Post
-            cover={post.data.cover}
-            title={post.data.title}
-            resume={post.data.resume}
-            tags={post.data.tags}
-            date={post.data.date.toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}
-            slug={post.slug}
-          />
+        {posts.map((post, index) => (
+          <div data-aos="fade-up" data-aos-delay={index * 100}>
+            <Post
+              cover={post.data.cover}
+              title={post.data.title}
+              resume={post.data.resume}
+              tags={post.data.tags}
+              date={post.data.date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+              slug={post.slug}
+            />
+          </div>
         ))}
       </div>
     </div>
