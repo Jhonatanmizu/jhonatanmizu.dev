@@ -54,6 +54,8 @@
   "contact.locationValue": "Salvador, Brasil (Remoto)",
   "engineering.title": "Engenharia",
   "engineering.subtitle": "Desenvolvedor de Software Full Stack",
+  "engineering.subtitle.frontend": "Desenvolvedor de Software Frontend",
+  "engineering.subtitle.frontend.design": "Desenvolvedor de Software Frontend & Designer de Produto",
   "engineering.description": "Especialista dinâmico em software full-stack com anos de experiência em design e desenvolvimento web de ponta. Especializado em frameworks JavaScript/TypeScript e desenvolvimento backend.",
   "design.title": "Design",
   "design.subtitle": "Design de Produto",

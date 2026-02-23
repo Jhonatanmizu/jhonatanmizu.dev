@@ -54,6 +54,8 @@
   "contact.locationValue": "Salvador, Brazil (Remote)",
   "engineering.title": "Engineering",
   "engineering.subtitle": "Full Stack Software Developer",
+  "engineering.subtitle.frontend": "Frontend Software Developer",
+  "engineering.subtitle.frontend.design": "Frontend Software Developer & Product Designer",
   "engineering.description": "Dynamic full-stack software specialist with years of experience in cutting-edge web design and development. Specialized in JavaScript/TypeScript frameworks and backend development.",
   "design.title": "Design",
   "design.subtitle": "Product Design",

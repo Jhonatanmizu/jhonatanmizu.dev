@@ -10,72 +10,91 @@ interface CareerItem {
   location: string;
   startDate: string;
   endDate: string;
-  duration: string;
   companyLink?: string;
 }
 
 const careers: CareerItem[] = [
   {
-    title: t('engineering.subtitle'),
-    company: "Example Tech",
-    location: t('career.locationSP'),
-    startDate: "Jan 2023",
-    endDate: t('career.present'),
-    duration: `2 ${t('career.yrs')} 2 ${t('career.mos')}`,
-    companyLink: "https://example.com",
+    title: t("engineering.subtitle"),
+    company: "Midway Bank",
+    location: t("career.locationSP"),
+    startDate: "Jan 2025",
+    endDate: t("career.present"),
+    companyLink: "https://www.midway.com.br",
   },
   {
-    title: t('engineering.subtitle'),
-    company: "Digital Solutions",
-    location: t('career.locationRemote'),
-    startDate: "Jul 2021",
-    endDate: "Dec 2022",
-    duration: `1 ${t('career.yr')} 5 ${t('career.mos')}`,
-    companyLink: "https://example.com",
+    title: t("engineering.subtitle"),
+    company: "Avantsoft",
+    location: t("career.locationRemote"),
+    startDate: "Nov 2022",
+    endDate: "Jan 2024",
+    companyLink: "https://www.avantsoft.com.br",
   },
   {
-    title: t('engineering.subtitle'),
-    company: "Startup Hub",
-    location: t('career.locationRecife'),
-    startDate: "Jun 2019",
-    endDate: "Jun 2021",
-    duration: `2 ${t('career.yrs')}`,
-    companyLink: "https://example.com",
+    title: t("engineering.subtitle.frontend"),
+    company: "Solos Brasil",
+    location: t("career.locationRemote"),
+    startDate: "Jan 2021",
+    endDate: "Oct 2022",
+    companyLink: "https://www.solosbrasil.com",
+  },
+  {
+    title: t("engineering.subtitle.frontend.design"),
+    company: "Tecno System EJ",
+    location: t("career.locationRemote"),
+    startDate: "Jan 2021",
+    endDate: "Oct 2023",
+    companyLink: "https://www.instagram.com/tecnosystemej/",
   },
 ];
 ---
 
 <section class="w-full py-24 px-6 md:px-12">
   <div class="max-w-6xl mx-auto">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-down">
+    <div
+      class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+      data-aos="fade-down"
+    >
       <div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">{t('career.title')} <span class="text-primary">{t('career.subtitle')}</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+          {t("career.title")}
+          <span class="text-primary">{t("career.subtitle")}</span>
+        </h2>
         <p class="text-fontColor/70 max-w-xl text-lg">
-          {t('career.description')}
+          {t("career.description")}
         </p>
       </div>
     </div>
 
     <div class="relative">
-      <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-tertiary/20 to-transparent md:-translate-x-1/2"></div>
-      
+      <div
+        class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-tertiary/20 to-transparent md:-translate-x-1/2"
+      >
+      </div>
+
       <div class="space-y-12">
         {
           careers.map((career, index) => (
-            <div 
-              class={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+            <div
+              class={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
               data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
               data-aos-delay={index * 100}
             >
-              <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-base border-2 border-primary rounded-full md:-translate-x-1/2 z-10 shadow-[0_0_10px_rgba(140,170,238,0.5)]"></div>
-              
+              <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-base border-2 border-primary rounded-full md:-translate-x-1/2 z-10 shadow-[0_0_10px_rgba(140,170,238,0.5)]" />
+
               <div class="w-full md:w-1/2 pl-8 md:pl-0 md:px-12">
-                <div class={`bg-base_alt/40 border border-tertiary/10 p-8 rounded-2xl hover:border-primary/30 transition-all duration-300 group ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                  <span class="text-primary font-bold text-sm mb-2 block">{career.startDate} — {career.endDate}</span>
+                <div
+                  class={`bg-base_alt/40 border border-tertiary/10 p-8 rounded-2xl hover:border-primary/30 transition-all duration-300 group ${index % 2 === 0 ? "md:text-left" : "md:text-right"}`}
+                >
+                  <span class="text-primary font-bold text-sm mb-2 block">
+                    {career.startDate} — {career.endDate}
+                  </span>
                   <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                     {career.title}
                   </h3>
-                  <div class={`flex flex-col ${index % 2 === 0 ? 'md:items-start' : 'md:items-end'} gap-1 mb-4 text-fontColor/80`}>
+                  <div
+                    class={`flex flex-col ${index % 2 === 0 ? "md:items-start" : "md:items-end"} gap-1 mb-4 text-fontColor/80`}
+                  >
                     {career.companyLink ? (
                       <a
                         href={career.companyLink}
@@ -84,17 +103,30 @@ const careers: CareerItem[] = [
                         class="hover:text-primary transition font-medium flex items-center gap-1"
                       >
                         {career.company}
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2,5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-3 h-3"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2,5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <line x1="7" y1="17" x2="17" y2="7" />
+                          <polyline points="7 7 17 7 17 17" />
+                        </svg>
                       </a>
                     ) : (
                       <span class="font-medium">{career.company}</span>
                     )}
-                    <span class="text-xs opacity-60 uppercase tracking-widest">{career.location}</span>
+                    <span class="text-xs opacity-60 uppercase tracking-widest">
+                      {career.location}
+                    </span>
                   </div>
-                  <p class="text-sm text-fontColor/60 italic">{career.duration}</p>
                 </div>
               </div>
-              <div class="hidden md:block w-1/2"></div>
+              <div class="hidden md:block w-1/2" />
             </div>
           ))
         }
