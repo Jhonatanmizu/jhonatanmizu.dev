@@ -58,5 +58,14 @@
   "design.title": "Design",
   "design.subtitle": "Product Design",
   "design.description": "Experienced Product Designer focused on creating user-centered solutions that drive business value. Specialized in end-to-end product design, user research, and design systems.",
+  "education.title": "Academic",
+  "education.subtitle": "Background",
+  "education.description": "My academic foundation in computer science and specialized training that shaped my technical perspective.",
+  "education.degree1": "B.S. in Computer Science",
+  "education.institution1": "Federal University of Pernambuco",
+  "education.desc1": "Focused on software engineering, algorithms, and distributed systems.",
+  "education.degree2": "UI/UX Design Specialization",
+  "education.institution2": "Design Institute",
+  "education.desc2": "Advanced course on user experience research and interface design systems.",
   "footer.rights": "© 2026 Jhonatan Mizu. All rights reserved."
 }

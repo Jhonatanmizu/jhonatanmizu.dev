@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import AboutMe from "../components/AboutMe.astro";
 import CareerItem from "../components/CareerItem.astro";
+import Education from "../components/Education.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -14,4 +15,5 @@ const t = useTranslations(lang);
 >
   <AboutMe />
   <CareerItem />
+  <Education />
 </Layout>

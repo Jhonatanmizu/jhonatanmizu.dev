@@ -58,5 +58,14 @@
   "design.title": "Design",
   "design.subtitle": "Design de Produto",
   "design.description": "Designer de Produto experiente focado em criar soluções centradas no usuário que geram valor para o negócio. Especializado em design de produto ponta a ponta, pesquisa de usuário e sistemas de design.",
+  "education.title": "Formação",
+  "education.subtitle": "Acadêmica",
+  "education.description": "Minha base acadêmica em ciência da computação e treinamentos especializados que moldaram minha perspectiva técnica.",
+  "education.degree1": "Bacharelado em Ciência da Computação",
+  "education.institution1": "Universidade Federal de Pernambuco",
+  "education.desc1": "Foco em engenharia de software, algoritmos e sistemas distribuídos.",
+  "education.degree2": "Especialização em Design UI/UX",
+  "education.institution2": "Instituto de Design",
+  "education.desc2": "Curso avançado sobre pesquisa de experiência do usuário e sistemas de design de interface.",
   "footer.rights": "© 2026 Jhonatan Mizu. Todos os direitos reservados."
 }

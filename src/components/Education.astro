@@ -1,0 +1,80 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+interface EducationItem {
+  degree: string;
+  institution: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+}
+
+const educationItems: EducationItem[] = [
+  {
+    degree: t('education.degree1'),
+    institution: t('education.institution1'),
+    location: t('career.locationRecife'),
+    startDate: "2018",
+    endDate: "2022",
+    description: t('education.desc1'),
+  },
+  {
+    degree: t('education.degree2'),
+    institution: t('education.institution2'),
+    location: t('career.locationRemote'),
+    startDate: "2021",
+    endDate: "2021",
+    description: t('education.desc2'),
+  },
+];
+---
+
+<section class="w-full py-24 px-6 md:px-12 bg-base_alt/20">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-down">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">{t('education.title')} <span class="text-primary">{t('education.subtitle')}</span></h2>
+        <p class="text-fontColor/70 max-w-xl text-lg">
+          {t('education.description')}
+        </p>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-tertiary/20 to-transparent md:-translate-x-1/2"></div>
+      
+      <div class="space-y-12">
+        {
+          educationItems.map((item, index) => (
+            <div 
+              class={`relative flex flex-col md:flex-row items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+              data-aos={index % 2 !== 0 ? "fade-right" : "fade-left"}
+              data-aos-delay={index * 100}
+            >
+              <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-base border-2 border-primary rounded-full md:-translate-x-1/2 z-10 shadow-[0_0_10px_rgba(140,170,238,0.5)]"></div>
+              
+              <div class="w-full md:w-1/2 pl-8 md:pl-0 md:px-12">
+                <div class={`bg-base_alt/40 border border-tertiary/10 p-8 rounded-2xl hover:border-primary/30 transition-all duration-300 group ${index % 2 !== 0 ? 'md:text-left' : 'md:text-right'}`}>
+                  <span class="text-primary font-bold text-sm mb-2 block">{item.startDate} — {item.endDate}</span>
+                  <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                    {item.degree}
+                  </h3>
+                  <div class={`flex flex-col ${index % 2 !== 0 ? 'md:items-start' : 'md:items-end'} gap-1 mb-4 text-fontColor/80`}>
+                    <span class="font-medium">{item.institution}</span>
+                    <span class="text-xs opacity-60 uppercase tracking-widest">{item.location}</span>
+                  </div>
+                  <p class="text-sm text-fontColor/60">{item.description}</p>
+                </div>
+              </div>
+              <div class="hidden md:block w-1/2"></div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
