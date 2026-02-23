@@ -51,7 +51,7 @@
   "contact.details": "Contact Details",
   "contact.social": "Social Profiles",
   "contact.location": "Location",
-  "contact.locationValue": "Recife, Brazil (Remote)",
+  "contact.locationValue": "Salvador, Brazil (Remote)",
   "engineering.title": "Engineering",
   "engineering.subtitle": "Full Stack Software Developer",
   "engineering.description": "Dynamic full-stack software specialist with years of experience in cutting-edge web design and development. Specialized in JavaScript/TypeScript frameworks and backend development.",
@@ -61,11 +61,14 @@
   "education.title": "Academic",
   "education.subtitle": "Background",
   "education.description": "My academic foundation in computer science and specialized training that shaped my technical perspective.",
-  "education.degree1": "B.S. in Computer Science",
-  "education.institution1": "Federal University of Pernambuco",
+  "education.degree1": "B.S. in Information Systems",
+  "education.institution1": "Federal University of Bahia",
+  "education.location1": "Alagoinhas, Brazil",
   "education.desc1": "Focused on software engineering, algorithms, and distributed systems.",
-  "education.degree2": "UI/UX Design Specialization",
-  "education.institution2": "Design Institute",
-  "education.desc2": "Advanced course on user experience research and interface design systems.",
+  "education.degree2": "M.S. in Computer Science",
+  "education.institution2": "Federal University of Feira de Santana",
+  "education.desc2": "Advanced research in test smells and software quality.",
+  "education.location2": "Feira de Santana, Brazil",
+
   "footer.rights": "© 2026 Jhonatan Mizu. All rights reserved."
 }
