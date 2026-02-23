@@ -6,17 +6,18 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title={`${t('nav.contact')} | Jhonatan Mizu`}>
+<Layout title={`${t("nav.contact")} | Jhonatan Mizu`}>
   <section
     class="w-full py-20 px-6 md:px-12 min-h-[calc(100vh-200px)] flex items-center"
   >
     <div class="max-w-4xl mx-auto w-full">
       <div class="text-center mb-16">
         <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-          {t('contact.title')} <span class="text-primary">{t('contact.subtitle')}</span>
+          {t("contact.title")}
+          <span class="text-primary">{t("contact.subtitle")}</span>
         </h1>
         <p class="text-fontColor/80 text-xl max-w-2xl mx-auto leading-relaxed">
-          {t('contact.description')}
+          {t("contact.description")}
         </p>
       </div>
 
@@ -26,10 +27,12 @@ const t = useTranslations(lang);
           <div
             class="bg-base_alt/40 border border-tertiary/10 p-8 md:p-12 rounded-2xl h-full shadow-xl"
           >
-            <h3 class="text-white font-bold text-2xl mb-8 text-center">{t('contact.details')}</h3>
+            <h3 class="text-white font-bold text-2xl mb-8 text-center">
+              {t("contact.details")}
+            </h3>
             <div class="flex flex-col lg:flex-row gap-6 mb-12">
               <a
-                href="mailto:hello@jhonatanmizu.dev"
+                href="mailto:jhonatanjesuss20@gmail.com"
                 class="flex-1 flex items-center gap-4 text-fontColor/80 hover:text-primary transition-colors group p-4 bg-base/30 rounded-xl border border-tertiary/5 min-w-0"
               >
                 <div
@@ -55,11 +58,13 @@ const t = useTranslations(lang);
                   >
                     Email
                   </p>
-                  <p class="text-lg truncate">hello@jhonatanmizu.dev</p>
+                  <p class="text-lg truncate">jhonatanjesuss20@gmail.com</p>
                 </div>
               </a>
 
-              <div class="flex-1 flex items-center gap-4 text-fontColor/80 group p-4 bg-base/30 rounded-xl border border-tertiary/5 min-w-0">
+              <div
+                class="flex-1 flex items-center gap-4 text-fontColor/80 group p-4 bg-base/30 rounded-xl border border-tertiary/5 min-w-0"
+              >
                 <div
                   class="shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary"
                 >
@@ -80,18 +85,20 @@ const t = useTranslations(lang);
                   <p
                     class="text-xs font-bold uppercase tracking-wider opacity-60"
                   >
-                    {t('contact.location')}
+                    {t("contact.location")}
                   </p>
-                  <p class="text-lg truncate">{t('contact.locationValue')}</p>
+                  <p class="text-lg truncate">{t("contact.locationValue")}</p>
                 </div>
               </div>
             </div>
 
             <div class="border-t border-tertiary/10 pt-10">
-              <p class="text-white font-bold mb-6 text-center">{t('contact.social')}</p>
+              <p class="text-white font-bold mb-6 text-center">
+                {t("contact.social")}
+              </p>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <a
-                  href="https://linkedin.com/in/jhonatanmizu"
+                  href="https://www.linkedin.com/in/ojhonatanjesus/"
                   target="_blank"
                   class="flex items-center justify-center gap-3 p-4 bg-base/30 rounded-xl border border-tertiary/10 hover:border-primary/50 hover:text-primary transition-all group text-sm"
                 >
@@ -132,7 +139,7 @@ const t = useTranslations(lang);
                   <span class="font-medium">GitHub</span>
                 </a>
                 <a
-                  href="https://bsky.app/profile/jhonatanmizu.dev"
+                  href="https://bsky.app/profile/jhonatanmizu.bsky.social"
                   target="_blank"
                   class="flex items-center justify-center gap-3 p-4 bg-base/50 rounded-xl border border-tertiary/10 hover:border-primary/50 hover:text-primary transition-all group text-sm"
                 >
