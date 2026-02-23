@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import AboutMe from "../../components/AboutMe.astro";
+import CareerItem from "../../components/CareerItem.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={`${t('nav.about')} - Jhonatan Mizu`}
+  description={t('about.description1')}
+>
+  <AboutMe />
+  <CareerItem />
+</Layout>

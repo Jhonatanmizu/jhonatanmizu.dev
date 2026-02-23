@@ -1,8 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Post from "../components/Post.astro";
+import Layout from "../../layouts/Layout.astro";
+import Post from "../../components/Post.astro";
 import { getCollection } from "astro:content";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -32,7 +32,7 @@ const posts = (await getCollection("posts")).sort(
               title={post.data.title}
               resume={post.data.resume}
               tags={post.data.tags}
-              date={post.data.date.toLocaleDateString(lang === 'en' ? 'en-US' : 'pt-BR', {
+              date={post.data.date.toLocaleDateString('pt-BR', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'

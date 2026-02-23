@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 interface CareerItem {
   title: string;
   company: string;
@@ -11,30 +16,30 @@ interface CareerItem {
 
 const careers: CareerItem[] = [
   {
-    title: "Full Stack Engineer",
+    title: t('engineering.subtitle'),
     company: "Example Tech",
-    location: "São Paulo, Brazil",
+    location: t('career.locationSP'),
     startDate: "Jan 2023",
-    endDate: "Present",
-    duration: "2 yrs 2 mos",
+    endDate: t('career.present'),
+    duration: `2 ${t('career.yrs')} 2 ${t('career.mos')}`,
     companyLink: "https://example.com",
   },
   {
-    title: "Software Developer",
+    title: t('engineering.subtitle'),
     company: "Digital Solutions",
-    location: "Remote",
+    location: t('career.locationRemote'),
     startDate: "Jul 2021",
     endDate: "Dec 2022",
-    duration: "1 yr 5 mos",
+    duration: `1 ${t('career.yr')} 5 ${t('career.mos')}`,
     companyLink: "https://example.com",
   },
   {
-    title: "Junior Developer",
+    title: t('engineering.subtitle'),
     company: "Startup Hub",
-    location: "Recife, Brazil",
+    location: t('career.locationRecife'),
     startDate: "Jun 2019",
     endDate: "Jun 2021",
-    duration: "2 yrs",
+    duration: `2 ${t('career.yrs')}`,
     companyLink: "https://example.com",
   },
 ];
@@ -44,9 +49,9 @@ const careers: CareerItem[] = [
   <div class="max-w-6xl mx-auto">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-down">
       <div>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Professional <span class="text-primary">Journey</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">{t('career.title')} <span class="text-primary">{t('career.subtitle')}</span></h2>
         <p class="text-fontColor/70 max-w-xl text-lg">
-          My career path as a developer, focusing on building impactful products and growing within high-performing teams.
+          {t('career.description')}
         </p>
       </div>
     </div>

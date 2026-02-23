@@ -1,4 +1,6 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
 interface Props {
   cover: string;
   title: string;
@@ -9,9 +11,14 @@ interface Props {
 }
 
 const { cover, title, resume, tags, date, slug } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const postPath = lang === 'en' ? `/posts/${slug}` : `/pt/posts/${slug}`;
 ---
 
-<a href={`/posts/${slug}`} class="group bg-base_alt/50 border border-tertiary/20 rounded-xl overflow-hidden post-card flex flex-col h-full hover:border-primary/50 transition-all duration-300">
+<a href={postPath} class="group bg-base_alt/50 border border-tertiary/20 rounded-xl overflow-hidden post-card flex flex-col h-full hover:border-primary/50 transition-all duration-300">
   <div class="relative overflow-hidden aspect-video">
     <img 
       src={cover} 
@@ -19,7 +26,7 @@ const { cover, title, resume, tags, date, slug } = Astro.props;
       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
     />
     <div class="absolute inset-0 bg-gradient-to-t from-base_alt/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-      <span class="text-xs font-medium text-primary bg-base p-2 rounded-lg">Read more →</span>
+      <span class="text-xs font-medium text-primary bg-base p-2 rounded-lg">{t('posts.readMore')}</span>
     </div>
   </div>
   <div class="p-5 flex flex-col flex-grow">

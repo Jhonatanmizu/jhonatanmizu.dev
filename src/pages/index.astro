@@ -4,9 +4,13 @@ import Hero from "../components/Hero.astro";
 import Engineering from "../components/Engineering.astro";
 import Design from "../components/Design.astro";
 import Projects from "../components/Projects.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Jhonatan Mizu - FullStack Developer">
+<Layout title={`${t('hero.title')} - ${t('hero.subtitle')}`}>
   <Hero />
   <Projects />
   <Engineering />
