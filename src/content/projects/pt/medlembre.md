@@ -6,6 +6,7 @@ image: "https://play-lh.googleusercontent.com/uvaW-8kVUMO1XI91w6kt2c8K5IBzwJ924o
 link: "https://play.google.com/store/apps/details?id=com.tecnosystemej.medlembre&hl=pt_BR"
 featured: true
 order: 1
+lang: "pt"
 ---
 
 Controle seus medicamentos com lembretes inteligentes, gestão de estoque e relatórios de adesão. Teste grátis por 7 dias.

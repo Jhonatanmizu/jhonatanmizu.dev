@@ -15,7 +15,8 @@ const { cover, title, resume, tags, date, slug } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const postPath = lang === 'en' ? `/posts/${slug}` : `/pt/posts/${slug}`;
+const cleanSlug = slug.split('/').pop();
+const postPath = lang === 'en' ? `/posts/${cleanSlug}` : `/pt/posts/${cleanSlug}`;
 ---
 
 <a href={postPath} class="group bg-base_alt/50 border border-tertiary/20 rounded-xl overflow-hidden post-card flex flex-col h-full hover:border-primary/50 transition-all duration-300">

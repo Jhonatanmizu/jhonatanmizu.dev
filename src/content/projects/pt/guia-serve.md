@@ -7,6 +7,7 @@ image: "https://guiaserve.com.br/wp-content/uploads/2024/05/Guia-Serve-App-Previ
 link: "https://play.google.com/store/apps/details?id=com.guiaserve.serviceapp&hl=pt_BR"
 featured: true
 order: 2
+lang: "pt"
 ---
 
 Os melhores prestadores de serviços em um só lugar!

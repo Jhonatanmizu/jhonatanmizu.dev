@@ -8,6 +8,7 @@ const postsCollection = defineCollection({
     date: z.date(),
     cover: z.string(),
     resume: z.string(),
+    lang: z.enum(["en", "pt"]),
   }),
 });
 
@@ -21,6 +22,7 @@ const projectsCollection = defineCollection({
     github: z.string().optional(),
     featured: z.boolean().default(false),
     order: z.number().default(0),
+    lang: z.enum(["en", "pt"]),
   }),
 });
 
