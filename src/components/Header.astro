@@ -6,59 +6,97 @@ const t = useTranslations(lang);
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { href: "/", label: t('nav.home') },
-  { href: "/about", label: t('nav.about') },
-  { href: "/posts", label: t('nav.posts') },
-  { href: "/projects", label: t('nav.projects') },
-  { href: "/contact", label: t('nav.contact') },
+  { href: "/", label: t("nav.home") },
+  { href: "/about", label: t("nav.about") },
+  { href: "/posts", label: t("nav.posts") },
+  { href: "/projects", label: t("nav.projects") },
+  { href: "/contact", label: t("nav.contact") },
 ];
 ---
 
-<header class="w-full py-6 px-6 md:px-12 sticky top-0 z-50 bg-gradient-to-b from-[#1a1f3a] to-transparent">
-	<nav class="max-w-6xl mx-auto md:flex justify-between items-center">
-		<div class="flex justify-between items-center">
-			<div class="text-2xl font-bold text-fontColor">Jhonatanmizu.dev</div>
-			<div class="flex items-center gap-4 md:hidden">
-				<div class="flex gap-2 text-fontColor text-sm">
-					<a href="/" class={lang === 'en' ? 'font-bold underline' : ''}>EN</a>
-					<span>|</span>
-					<a href="/pt" class={lang === 'pt' ? 'font-bold underline' : ''}>PT</a>
-				</div>
-				<button id="menu-toggle" class="z-50">
-					<div id="hamburger-icon">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-				</button>
-			</div>
-		</div>
-		<ul id="menu" class="hidden md:flex gap-8 text-fontColor flex-col md:flex-row md:items-center md:gap-8 absolute md:relative top-0 left-0 w-full h-screen md:h-auto bg-[#1a1f3a] md:bg-transparent justify-center md:justify-end items-center">
-			{navItems.map(item => (
-				<li>
-					<a href={lang === 'en' ? item.href : `/pt${item.href === '/' ? '' : item.href}`} 
-					   class={(currentPath === item.href || currentPath === `/pt${item.href}`) ? 'text-primary' : 'hover:text-primary transition'}>
-						{item.label}
-					</a>
-				</li>
-			))}
-			<li class="hidden md:flex gap-2 text-fontColor text-sm ml-4">
-				<a href="/" class={lang === 'en' ? 'font-bold underline text-primary' : 'hover:text-primary transition'}>EN</a>
-				<span>|</span>
-				<a href="/pt" class={lang === 'pt' ? 'font-bold underline text-primary' : 'hover:text-primary transition'}>PT</a>
-			</li>
-		</ul>
-	</nav>
+<header
+  class="w-full py-6 px-6 md:px-12 sticky top-0 z-50 bg-gradient-to-b from-[#1a1f3a] to-transparent"
+>
+  <nav class="max-w-6xl mx-auto md:flex justify-between items-center">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl font-bold text-fontColor md:visible invisible">
+        Jhonatanmizu.dev
+      </div>
+      <div class="flex items-center gap-4 md:hidden">
+        <div class="flex gap-2 text-fontColor text-sm">
+          <a href="/" class={lang === "en" ? "font-bold underline" : ""}>EN</a>
+          <span>|</span>
+          <a href="/pt" class={lang === "pt" ? "font-bold underline" : ""}>PT</a
+          >
+        </div>
+        <button id="menu-toggle" class="z-50">
+          <div id="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <ul
+      id="menu"
+      class="hidden md:flex gap-8 text-fontColor flex-col md:flex-row md:items-center md:gap-8 absolute md:relative top-0 left-0 w-full h-screen md:h-auto bg-[#1a1f3a] md:bg-transparent justify-center md:justify-end items-center"
+    >
+      {
+        navItems.map((item) => {
+          const href = lang === "en"
+            ? item.href
+            : `/pt${item.href === "/" ? "" : item.href}`;
+
+          const normalizedPath = currentPath.replace(/\/$/, "") || "/";
+          const normalizedHref = href.replace(/\/$/, "") || "/";
+
+          const isActive = normalizedPath === normalizedHref ||
+                           (normalizedHref !== "/" && normalizedPath.startsWith(normalizedHref + "/"));
+
+          return (
+            <li>
+              <a
+                href={href}
+                class={
+                  isActive
+                    ? "text-primary"
+                    : "hover:text-primary transition"
+                }
+              >
+                {item.label}
+              </a>
+            </li>
+          );
+        })
+      }
+      <li class="hidden md:flex gap-2 text-fontColor text-sm ml-4">
+        <a
+          href="/"
+          class={lang === "en"
+            ? "font-bold underline text-primary"
+            : "hover:text-primary transition"}>EN</a
+        >
+        <span>|</span>
+        <a
+          href="/pt"
+          class={lang === "pt"
+            ? "font-bold underline text-primary"
+            : "hover:text-primary transition"}>PT</a
+        >
+      </li>
+    </ul>
+  </nav>
 </header>
 <script>
-	const menuToggle = document.getElementById('menu-toggle');
-	const menu = document.getElementById('menu');
-	const hamburgerIcon = document.getElementById('hamburger-icon');
+  const menuToggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+  const hamburgerIcon = document.getElementById("hamburger-icon");
 
-	if (menuToggle && menu && hamburgerIcon) {
-		menuToggle.addEventListener('click', () => {
-			menu.classList.toggle('show-menu');
-			hamburgerIcon.classList.toggle('is-active');
-		});
-	}
+  if (menuToggle && menu && hamburgerIcon) {
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("show-menu");
+      hamburgerIcon.classList.toggle("is-active");
+    });
+  }
 </script>
