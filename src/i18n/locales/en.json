@@ -71,6 +71,8 @@
   "education.institution2": "Federal University of Feira de Santana",
   "education.desc2": "Advanced research in test smells and software quality.",
   "education.location2": "Feira de Santana, Brazil",
+  "pagination.prev": "Previous",
+  "pagination.next": "Next",
 
   "footer.rights": "© 2026 Jhonatan Mizu. All rights reserved."
 }

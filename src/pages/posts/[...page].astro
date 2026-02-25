@@ -1,0 +1,77 @@
+---
+import type { Page, GetStaticPathsOptions } from "astro";
+import type { CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Post from "../../components/Post.astro";
+import Pagination from "../../components/Pagination.astro";
+import { getCollection } from "astro:content";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = (
+    await getCollection("posts", ({ data }) => data.lang === "en")
+  ).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  return paginate(posts, { pageSize: 12 }).map((path) => {
+    const { page } = path.params;
+    const numericPage = Number(page);
+    if (numericPage === 1 || page === "1") {
+      return {
+        ...path,
+        params: { ...path.params, page: undefined },
+      };
+    }
+    return path;
+  });
+}
+
+interface Props {
+  page: Page<CollectionEntry<"posts">>;
+}
+
+const { page } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t("nav.posts")} | Jhonatan Mizu`}>
+  <section class="w-full py-20 px-6 md:px-12 min-h-screen">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-16 text-center max-w-2xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          {t("posts.title")}
+          <span class="text-primary">{t("posts.subtitle")}</span>
+        </h1>
+        <p class="text-fontColor/80 text-lg leading-relaxed">
+          {t("posts.description")}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          page.data.map((post, index) => (
+            <div data-aos="fade-up" data-aos-delay={index * 100}>
+              <Post
+                cover={post.data.cover}
+                title={post.data.title}
+                resume={post.data.resume}
+                tags={post.data.tags}
+                date={post.data.date.toLocaleDateString(
+                  lang === "en" ? "en-US" : "pt-BR",
+                  {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  },
+                )}
+                slug={post.slug}
+              />
+            </div>
+          ))
+        }
+      </div>
+
+      <Pagination page={page} />
+    </div>
+  </section>
+</Layout>

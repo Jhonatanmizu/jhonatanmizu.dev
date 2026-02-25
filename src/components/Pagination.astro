@@ -1,0 +1,52 @@
+---
+import type { Page } from "astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+interface Props {
+  page: Page;
+}
+
+const { page } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { url } = page;
+
+if (page.lastPage <= 1) return null;
+---
+
+<div class="flex justify-center items-center gap-4 mt-12">
+  {
+    url.prev ? (
+      <a
+        href={url.prev}
+        class="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary hover:text-base_alt transition-all duration-300 font-medium"
+      >
+        &larr; {t("pagination.prev")}
+      </a>
+    ) : (
+      <span class="px-6 py-2 rounded-full border border-tertiary text-tertiary cursor-not-allowed opacity-50 font-medium">
+        &larr; {t("pagination.prev")}
+      </span>
+    )
+  }
+
+  <span class="text-fontColor font-medium">
+    {page.currentPage} / {page.lastPage}
+  </span>
+
+  {
+    url.next ? (
+      <a
+        href={url.next}
+        class="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary hover:text-base_alt transition-all duration-300 font-medium"
+      >
+        {t("pagination.next")} &rarr;
+      </a>
+    ) : (
+      <span class="px-6 py-2 rounded-full border border-tertiary text-tertiary cursor-not-allowed opacity-50 font-medium">
+        {t("pagination.next")} &rarr;
+      </span>
+    )
+  }
+</div>
