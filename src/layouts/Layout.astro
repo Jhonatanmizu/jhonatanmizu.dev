@@ -1,41 +1,67 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import BackToTop from '../components/BackToTop.astro';
-import { getLangFromUrl } from '../i18n/utils';
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BackToTop from "../components/BackToTop.astro";
+import { getLangFromUrl } from "../i18n/utils";
 
 interface Props {
-	title?: string;
-	description?: string;
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
 }
 
-const { title = 'Jhonatan Mizu - FullStack Developer', description = 'Full-stack developer and UI/UX specialist with 4+ years of experience.' } = Astro.props;
+const {
+  title = "Jhonatan Mizu - FullStack Developer",
+  description = "Full-stack developer and UI/UX specialist with 4+ years of experience.",
+  ogImage = "https://www.jhonatanmizu.com.br/og.png",
+  ogType = 'website',
+} = Astro.props;
+
 const lang = getLangFromUrl(Astro.url);
+const canonicalUrl = Astro.url.href;
 ---
 
 <html lang={lang} class="overflow-x-hidden">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-	</head>
-	<body class="bg-gradient-to-br from-base to-base_alt text-fontColor overflow-x-hidden">
-		<Header />
-		<slot />
-		<Footer />
-		<BackToTop />
-		<script>
-			import AOS from 'aos';
-			import 'aos/dist/aos.css';
-			AOS.init({
-				duration: 800,
-				once: false,
-			});
-		</script>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+  
+
+	<meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body
+    class="bg-gradient-to-br from-base to-base_alt text-fontColor overflow-x-hidden"
+  >
+    <Header />
+    <slot />
+    <Footer />
+    <BackToTop />
+    <script>
+      import AOS from "aos";
+      import "aos/dist/aos.css";
+      AOS.init({
+        duration: 800,
+        once: false,
+      });
+    </script>
+  </body>
 </html>
