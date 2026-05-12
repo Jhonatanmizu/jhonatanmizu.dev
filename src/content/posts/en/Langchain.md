@@ -163,7 +163,6 @@ splitter = RecursiveCharacterTextSplitter(chunk_size=250, chunk_overlap=70)
 chunks = splitter.create_documents([long_text])
 
 # 2. Define the LLM
-# Switched to gpt-4o as gpt-5-nano isn't a standard model name.
 llm = ChatOpenAI(model="gpt-4o", temperature=0.2)
 
 # 3. Design the LCEL Summarization Chain (Stuff strategy)
